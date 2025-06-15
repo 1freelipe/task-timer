@@ -1,0 +1,212 @@
+.clock {
+    max-width: 300px;
+    font-size: 30px;
+    margin-top: 60px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    box-shadow: 0 2px 20px 5px #ccc;
+    text-align: center;
+}
+
+#dateDay {
+    width: 400px;
+    animation: typing 2s steps(20) infinite alternate-reverse;
+}
+
+.div {
+    background-image: url(../task-timer/img/01073865290819.5d61d475f0072.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 800px;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 12px;
+    position: relative;
+}
+
+.backNight {
+    background-image: url(../task-timer/img/5_71.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 800px;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 12px;
+    position: relative;
+}
+
+.timer {
+    color: black;
+    width: 400px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 30px rgba(227, 228, 237, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    font-size: 60px;
+    font-weight: 800;
+    padding: 0 15px 15px 0;
+    margin-bottom: 0;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 20px;
+}
+
+.div-botoes {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#btBegin, #btBegin2 {
+    color: #fff;
+    border: none;
+    padding: 7px;
+    width: 60px;
+    border-radius: 5px;
+    background: linear-gradient(90deg,rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    cursor: pointer;
+}
+
+#btBegin2 {
+    background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+#btBegin:hover, #btBegin2:hover {
+    transform: scale(1.05);
+}
+
+#btBegin:active, #btBegin2:active {
+    transform: scale(0.90);
+}
+
+#btBreak, #btBreak2 {
+    color: #fff;
+    border: none;
+    padding: 7px;
+    width: 60px;
+    border-radius: 5px;
+    background: linear-gradient(90deg,rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    cursor: pointer;
+}
+
+#btBreak2 {
+    background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+#btBreak:hover, #btBreak2:hover {
+    transform: scale(1.05);
+}
+
+#btBreak:active, #btBreak2:active {
+    transform: scale(0.90);
+}
+
+#btZero {
+    color: #fff;
+    border: none;
+    padding: 7px;
+    width: 60px;
+    border-radius: 5px;
+    background: linear-gradient(90deg,rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    cursor: pointer;
+}
+
+#btZero:hover {
+    transform: scale(1.05)
+}
+
+#btZero:active {
+    transform: scale(0.90);
+}
+
+#btReset {
+    color: #fff;
+    border: none;
+    padding: 7px;
+    width: 60px;
+    border-radius: 5px;
+    background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    cursor: pointer;
+}
+
+#btReset:hover {
+    transform: scale(1.05)
+}
+
+#btReset:active {
+    transform: scale(0.90);
+}
+
+
+.nightcolor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 12px;
+    margin: 0 0 10px 10px;
+    border: none;
+    border-radius: 5px;
+    background: black;
+    color: #fff;
+    cursor: pointer;
+}
+
+.backWhite {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 12px;
+    margin: 0 0 10px 10px;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    color: black;
+    cursor: pointer;
+ 
+}
+
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.tab {
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tab:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.tabAtiva {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.ativa {
+    display: block;
+}
+
+
+
+
+

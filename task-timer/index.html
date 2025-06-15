@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="../task-timer/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="bgprimary">
+        <div class="div">
+            <h1 id="dateDay">Aqui vai o timer</h1>
+            <div class="timer">
+                <div class="tabs">
+                    <button class="tab tabAtiva" data-tab="timer">Timer</button>
+                    <button class="tab" data-tab="timerDecrescente">Focus Timer</button>
+                </div>
+
+                <div id="timer" class="tab-content ativa">
+                    <span>00:00:00</span>
+                    <div class="div-botoes">
+                        <button id="btBegin">Iniciar</button>
+                        <button id="btBreak">Pausar</button>
+                        <button id="btZero">Zerar</button>
+                    </div>
+                </div>
+
+                <div id="timerDesc" class="tab-content">
+                    <span>25:00</span>
+                    <div class="div-botoes">
+                        <button id="btBegin2">Iniciar</button>
+                        <button id="btBreak2">Pausar</button>
+                        <button id="btReset">Reset</button>
+                    </div>
+                </div>
+            </div>
+            <button id="backNight" class="nightcolor">Night Color</button>
+        </div>
+
+        <section class="container">
+            <h1>Lista de tarefas!</h1>
+            <div class="lista">
+                <input type="text" id="tarefas" placeholder="Adicione uma tarefa">
+                <button id="addTarefa" class="addTarefa">Adicionar tarefa</button>
+            </div>
+            <ul id="listadeTarefas">
+
+            </ul>
+            <div class="div-button">
+                <button id="btClear">Apagar lista</button>
+            </div>
+            <div class="clock" id="clock">00:00:00</div>
+        </section>
+    </div>
+
+    <script src="../task-timer/script.js"></script>
+    <script src="../task-timer/clock.js"></script>
+</body>
+
+</html>

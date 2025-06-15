@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('clock.css');
+:root {
+    --primary-color: linear-gradient(to right, #4b0082, #9b30ff);
+    --button-color: #104e81;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    background: linear-gradient(to right, #4b0082, #9b30ff);
+
+}
+
+.bgprimary {
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    max-width: 100%;
+    width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 50px 5px black; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeInUp 0.8s ease-out both;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 115px;
+}
+
+h1 {
+    color: #9b30ff;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-size: 50px;
+    width: 100%;
+    max-width: 460px;
+    max-height: 550px;
+    font-family: monospace;
+    text-wrap: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(20) infinite alternate-reverse;
+}
+
+#saidaHora {
+    font-size: 80px;
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+input, form label, form button {
+    display: block;
+    width: 50%;
+}
+
+input {
+    all: unset;
+    padding: 12px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.088);
+}
+
+input:focus {
+    border-color: #104e81
+}
+
+input:hover{
+    box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.55);
+}
+
+input::placeholder {
+    font-size: 20px;
+}
+
+.addTarefa {
+    border: none;
+    background: var(--primary-color);
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-left: 20px;
+    color: white;
+    transition: 0.3 ease;
+    padding: 15px;
+    }
+
+.addTarefa:hover {
+    background: var(--button-color);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(178, 102, 255, 0.5);
+}
+
+button:active {
+    background: var(--button-color);
+}
+
+label {
+    font-size:22px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.btnTarefa {
+    max-width: 200px;
+    border: none;
+    background: var(--primary-color);
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    transition: 0.3 ease;
+    padding: 10px;
+    margin: 10px 0 10px 10px;
+}
+
+.btnTarefa:hover {
+    background: var(--button-color);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(178, 102, 255, 0.5);
+
+}
+
+.btnFeito {
+    max-width: 200px;
+    border: none;
+    background: var(--primary-color);
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    transition: 0.3 ease;
+    padding: 10px;
+    margin: 10px 0 10px 10px;
+}
+
+.btnFeito:hover {
+    background: var(--button-color);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(178, 102, 255, 0.5);
+
+}
+
+.feito {
+    text-decoration:line-through;
+    color: #ccc;
+    list-style: none;
+}
+
+.lista {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-button {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 160px;
+}
+
+.div-button button {
+    padding: 5px 15px;
+    font-size: 25px;
+    color: #725ac1;
+    font-weight: bold;
+    border: none;
+    border: 2px solid #725ac1;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    margin-top: 50px;
+}
+
+.div-button button:hover {
+    color: #fff;
+    box-shadow: inset 0 -100px 0 0 #9b30ff;
+}
+
+.div-button button:active {
+    transform: scale(0.9);
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0%;
+        color: black;
+    }
+}
