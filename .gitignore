@@ -1,0 +1,29 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Editor - VSCode
+.vscode/
+
+# Editor - JetBrains (WebStorm, etc.)
+.idea/
+
+# Arquivos temporários
+*.tmp
+*.swp
+*.swo
+*.bak
+
+# MacOS
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# Windows
+ehthumbs.db
+Desktop.ini
