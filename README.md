@@ -3,6 +3,8 @@
 **Projeto open source em andamento** — branch principal: `dev`  
 Uma ferramenta simples, pensada para quem busca mais **foco**, **produtividade** e **controle da ansiedade** no dia a dia.
 
+## Confira o projeto aqui: <a href="https://1freelipe.github.io/task-timer/task-timer/index.html">task-timer</a>
+
 ## 🧘‍♂️ O que é?
 
 O **task-timer** é uma combinação de:
