@@ -62,47 +62,67 @@
     margin-bottom: 20px;
 }
 
-#btBegin, #btBegin2 {
+#btBegin,
+#btBegin2,
+#btBegin3 {
     color: #fff;
     border: none;
     padding: 7px;
     width: 60px;
     border-radius: 5px;
-    background: linear-gradient(90deg,rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    background: linear-gradient(90deg, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
     cursor: pointer;
 }
 
 #btBegin2 {
-    background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
 }
 
-#btBegin:hover, #btBegin2:hover {
+#btBegin3 {
+    background: linear-gradient(90deg, rgba(71, 139, 166, 1) 0%, rgba(70, 212, 197, 1) 100%);
+}
+
+#btBegin:hover,
+#btBegin2:hover,
+#btBegin3:hover {
     transform: scale(1.05);
 }
 
-#btBegin:active, #btBegin2:active {
+#btBegin:active,
+#btBegin2:active,
+#btBegin3:active {
     transform: scale(0.90);
 }
 
-#btBreak, #btBreak2 {
+#btBreak,
+#btBreak2,
+#btBreak3 {
     color: #fff;
     border: none;
     padding: 7px;
     width: 60px;
     border-radius: 5px;
-    background: linear-gradient(90deg,rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    background: linear-gradient(90deg, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
     cursor: pointer;
 }
 
 #btBreak2 {
-    background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
 }
 
-#btBreak:hover, #btBreak2:hover {
+#btBreak3 {
+    background: linear-gradient(90deg,rgba(71, 139, 166, 1) 0%, rgba(70, 212, 197, 1) 100%);
+}
+
+#btBreak:hover,
+#btBreak2:hover,
+#btBreak3:hover {
     transform: scale(1.05);
 }
 
-#btBreak:active, #btBreak2:active {
+#btBreak:active,
+#btBreak2:active,
+#btBreak3:active {
     transform: scale(0.90);
 }
 
@@ -112,7 +132,7 @@
     padding: 7px;
     width: 60px;
     border-radius: 5px;
-    background: linear-gradient(90deg,rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    background: linear-gradient(90deg, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
     cursor: pointer;
 }
 
@@ -124,21 +144,25 @@
     transform: scale(0.90);
 }
 
-#btReset {
+#btReset, #btReset1 {
     color: #fff;
     border: none;
     padding: 7px;
     width: 60px;
     border-radius: 5px;
-    background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
     cursor: pointer;
 }
 
-#btReset:hover {
+#btReset1 {
+    background: linear-gradient(90deg,rgba(71, 139, 166, 1) 0%, rgba(70, 212, 197, 1) 100%);
+}
+
+#btReset:hover, #btReset1:hover {
     transform: scale(1.05)
 }
 
-#btReset:active {
+#btReset:active, #btReset1:active {
     transform: scale(0.90);
 }
 
@@ -167,7 +191,7 @@
     background: #fff;
     color: black;
     cursor: pointer;
- 
+
 }
 
 
@@ -206,7 +230,44 @@
     display: block;
 }
 
+.sound {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    margin: 0 5px 0 0;
+    background: center;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
 
+.sound:hover {
+    transform: scale(1.10);
+}
 
+.sound:active {
+    background: none;
+    transform: scale(0.90);
+}
 
+.mute {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    margin: 0 50px 0 0;
+    background: center;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
 
+.mute:hover {
+    transform: scale(1.10);
+}
+
+.mute:active{
+    background: none;
+    transform: scale(0.90);
+}
