@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import url('clock.css');
+
 :root {
     --primary-color: linear-gradient(to right, #4b0082, #9b30ff);
     --button-color: #104e81;
@@ -18,8 +19,37 @@ body {
     background-size: cover;
     background-position: auto 100%;
     background-repeat: repeat-x;
-    animation: gradient 60s linear infinite;
+    animation: gradient 120s linear infinite;
     image-rendering: pixelated;
+    overflow-y: hidden;
+}
+
+.backDay {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    background-image: url(../task-timer/img/backday.jpg);
+    background-size: cover;
+    background-position: auto 100%;
+    background-repeat: repeat-x;
+    animation: gradient 120s linear infinite;
+    image-rendering: pixelated;
+    overflow-y: hidden;
+}
+
+.backAfternoon {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    background-image: url(../task-timer/img/backafternon.jpg);
+    background-size: cover;
+    background-position: auto 100%;
+    background-repeat: repeat-x;
+    animation: gradient 120s linear infinite;
+    image-rendering: pixelated;
+    overflow-y: hidden;
 }
 
 .bgprimary {
@@ -33,7 +63,7 @@ body {
     background: #fff;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 5px 5px 50px 5px black; 
+    box-shadow: 5px 5px 50px 5px black;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -68,7 +98,9 @@ h2 {
     margin-top: 0;
 }
 
-input, form label, form button {
+input,
+form label,
+form button {
     display: block;
     width: 50%;
 }
@@ -85,7 +117,7 @@ input:focus {
     border-color: #104e81
 }
 
-input:hover{
+input:hover {
     box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.55);
 }
 
@@ -105,7 +137,7 @@ input::placeholder {
     color: white;
     transition: 0.3 ease;
     padding: 15px;
-    }
+}
 
 .addTarefa:hover {
     background: var(--button-color);
@@ -118,7 +150,7 @@ button:active {
 }
 
 label {
-    font-size:22px;
+    font-size: 22px;
     margin-bottom: 10px;
     font-style: italic;
 }
@@ -168,7 +200,7 @@ label {
 }
 
 .feito {
-    text-decoration:line-through;
+    text-decoration: line-through;
     color: #ccc;
     list-style: none;
 }

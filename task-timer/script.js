@@ -106,12 +106,22 @@ function recarregarTarefas() {
 recarregarTarefas();
 
 function clockHour() {
-    const clock = document.querySelector('#clock')
-    const data = new Date;
-    clock.innerHTML = data.toUTCString('pt-BR', {
-    hour12: false,
-    timeZone: 'GMT'
-})
+    const clock = document.querySelector('#clockTime')
+    const dataClock = new Date();
+    let hour = dataClock.getHours();
+    let minutes = dataClock.getMinutes();
+    let seconds = dataClock.getSeconds();
+
+    clock.innerHTML = `${hour.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+
+    if(hour >= 5 && hour < 15){
+        document.body.classList.add('backDay');
+    }else if(hour > 15 && hour < 18){
+        document.body.classList.remove('backDay');
+        document.body.classList.add('backAfternoon');
+    }else {
+        document.body.classList.remove('backAfternoon');
+    }
 };
 
 setInterval(clockHour, 1000)

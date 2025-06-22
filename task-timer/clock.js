@@ -316,7 +316,13 @@ btnReset1.addEventListener('click', () => {
 
 const btMuted = document.querySelector('#btMuted')
 btMuted.addEventListener('click', () => {
-    sound.volume = 0;
+    if (sound.volume === 0) {
+        sound.volume = 1;
+        sound2.volume = 1;
+    } else {
+        sound.volume = 0;
+        sound2.volume = 0;
+    }
 })
 
 
