@@ -15,13 +15,14 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
     font-size: 1.3em;
-    background-image: url(../task-timer/img/aesthetic-8-bit-blue-cloudy-sky-rwy8pminfpcm35bt.jpg);
+    background-image: url(img/aesthetic-8-bit-blue-cloudy-sky-rwy8pminfpcm35bt.jpg);
     background-size: cover;
     background-position: auto 100%;
     background-repeat: repeat-x;
     animation: gradient 120s linear infinite;
     image-rendering: pixelated;
     overflow-y: hidden;
+    height: 100vh;
 }
 
 .backDay {
@@ -29,13 +30,14 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
     font-size: 1.3em;
-    background-image: url(../task-timer/img/backday.jpg);
+    background-image: url(img/backday.jpg);
     background-size: cover;
     background-position: auto 100%;
     background-repeat: repeat-x;
     animation: gradient 120s linear infinite;
     image-rendering: pixelated;
     overflow-y: hidden;
+    height: 100vh;
 }
 
 .backAfternoon {
@@ -43,13 +45,14 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
     font-size: 1.3em;
-    background-image: url(../task-timer/img/backafternon.jpg);
+    background-image: url(img/backafternon.jpg);
     background-size: cover;
     background-position: auto 100%;
     background-repeat: repeat-x;
     animation: gradient 120s linear infinite;
     image-rendering: pixelated;
     overflow-y: hidden;
+    height: 100vh;
 }
 
 .bgprimary {
