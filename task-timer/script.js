@@ -116,11 +116,12 @@ function clockHour() {
 
     if(hour >= 5 && hour < 15){
         document.body.classList.add('backDay');
-    }else if(hour > 15 && hour < 18){
-        document.body.classList.remove('backDay');
+    }else if(hour >= 15 && hour < 18){
         document.body.classList.add('backAfternoon');
+        document.body.classList.remove('backDay');
     }else {
         document.body.classList.remove('backAfternoon');
+        document.body.classList.remove('backDay');
     }
 };
 
