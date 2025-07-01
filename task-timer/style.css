@@ -18,11 +18,10 @@ body {
     background-image: url(img/aesthetic-8-bit-blue-cloudy-sky-rwy8pminfpcm35bt.jpg);
     background-size: cover;
     background-position: auto 100%;
-    background-repeat: repeat-x;
+    background-repeat: repeat;
+    background-attachment: fixed;
     animation: gradient 120s linear infinite;
     image-rendering: pixelated;
-    overflow-y: hidden;
-    height: 100vh;
 }
 
 .backDay {
@@ -55,33 +54,70 @@ body {
     height: 100vh;
 }
 
-.bgprimary {
-    width: 100%;
-    height: 100vh;
-}
-
 .container {
-    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
     width: 800px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 5px 5px 50px 5px black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: fadeInUp 0.8s ease-out both;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    background-image: url(img/01073865290819.5d61d475f0072.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     font-size: 25px;
     font-weight: bold;
-    margin-top: 115px;
+    background-attachment: fixed;
 }
 
-h1 {
-    color: #9b30ff;
-    margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 50px;
+.listadeTarefas {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.listadeTarefas li {
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container.backNight {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    width: 800px;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    background-image: url(img/5_71.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 25px;
+    font-weight: bold;
+    background-attachment: fixed;
+}
+
+.container.backNight h1 {
+    color: white;
+    animation: typing1 3s steps(20) infinite alternate-reverse;
+}
+
+#ltTitle {
+    color: black;
+    margin-left: 150px;
+    margin-bottom: 20px;
     font-size: 50px;
     width: 100%;
     max-width: 460px;
@@ -90,11 +126,6 @@ h1 {
     text-wrap: nowrap;
     overflow: hidden;
     animation: typing 3s steps(20) infinite alternate-reverse;
-}
-
-#saidaHora {
-    font-size: 80px;
-    padding: 20px;
 }
 
 h2 {
@@ -114,6 +145,8 @@ input {
     border: 2px solid transparent;
     border-radius: 12px;
     box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.088);
+    backdrop-filter: blur(20px);
+    margin-top: 10px;
 }
 
 input:focus {
@@ -126,6 +159,7 @@ input:hover {
 
 input::placeholder {
     font-size: 20px;
+    color: white;
 }
 
 .addTarefa {
@@ -213,6 +247,7 @@ label {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 15px auto;
 }
 
 .div-button {
@@ -243,6 +278,14 @@ label {
     transform: scale(0.9);
 }
 
+.clock {
+    max-width: 150px;
+    font-size: 30px;
+    margin-top: 60px;
+    border-radius: 12px;
+    text-align: center;
+}
+
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -259,6 +302,13 @@ label {
     from {
         width: 0%;
         color: black;
+    }
+}
+
+@keyframes typing1 {
+    from {
+        width: 0%;
+        color: white;
     }
 }
 

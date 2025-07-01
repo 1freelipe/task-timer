@@ -10,7 +10,14 @@ function listadeTarefas(tarefaTexto = null) {
 
     function criaSpan() {
         const span = document.createElement('span')
+        const backNight = document.querySelector('#backNight');
         span.innerText = texto;
+        span.classList.add('spanTarefa')
+        if (backNight.classList.contains('backWhite')) {
+            span.style.color = 'white';
+        } else {
+            span.style.color = 'black';
+        }
         return span;
     }
 
@@ -21,6 +28,7 @@ function listadeTarefas(tarefaTexto = null) {
         btn.addEventListener('click', () => {
             li.remove();
             salvarTarefas();
+            clearVisibility();
         })
         return btn;
     }
@@ -30,11 +38,10 @@ function listadeTarefas(tarefaTexto = null) {
         btn.innerHTML = 'Feito';
         btn.classList.add('btnFeito');
         btn.addEventListener('click', () => {
-            li.classList.toggle('feito')
+            novoSpan.classList.toggle('feito');
         })
         return btn;
     }
-
 
     const novoBtn = criaButton(texto);
     const novoSpan = criaSpan(texto)
@@ -53,6 +60,15 @@ function listadeTarefas(tarefaTexto = null) {
 
 }
 
+function botoesSpan() {
+    const spans = document.querySelectorAll('.spanTarefa');
+    const backNight = document.querySelector('#backNight');
+
+    spans.forEach(span => {
+        span.style.color = backNight.classList.contains('backWhite') ? 'white' : 'black'
+    });
+}
+
 function limparLista() {
     const listadeTarefas = document.querySelector('#listadeTarefas')
     const tarefas = document.querySelector('#tarefas')
@@ -61,15 +77,37 @@ function limparLista() {
         listadeTarefas.innerHTML = "";
         tarefas.focus();
         salvarTarefas();
+        clearVisibility();
     })
 }
 
 limparLista();
 
+function clearVisibility() {
+    const listadeTarefas = document.querySelector('#listadeTarefas')
+    const btClear = document.querySelector('#btClear');
+    const ltTitle = document.querySelector('#ltTitle');
+    const clockP = document.querySelector('.clock');
+
+    if (listadeTarefas.children.length > 0) {
+        btClear.style.display = 'inline-block';
+        ltTitle.style.display = 'inline-block';
+        clockP.style.display = 'inline-block';
+    } else {
+        btClear.style.display = 'none';
+        ltTitle.style.display = 'none';
+        clockP.style.display = 'none';
+    }
+
+}
+
+clearVisibility();
+
 const tarefas = document.querySelector('#tarefas')
 tarefas.addEventListener('keypress', (e) => {
     if (e.keyCode === 13) {
         listadeTarefas();
+        clearVisibility();
     }
 })
 
@@ -101,6 +139,8 @@ function recarregarTarefas() {
     for (let tarefa of listaDeTarefas) {
         listadeTarefas(tarefa);
     }
+
+    clearVisibility();
 }
 
 recarregarTarefas();
@@ -114,12 +154,12 @@ function clockHour() {
 
     clock.innerHTML = `${hour.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
 
-    if(hour >= 5 && hour < 15){
+    if (hour >= 5 && hour < 15) {
         document.body.classList.add('backDay');
-    }else if(hour >= 15 && hour < 18){
+    } else if (hour >= 15 && hour < 18) {
         document.body.classList.add('backAfternoon');
         document.body.classList.remove('backDay');
-    }else {
+    } else {
         document.body.classList.remove('backAfternoon');
         document.body.classList.remove('backDay');
     }

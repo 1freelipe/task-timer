@@ -1,18 +1,9 @@
-.clock {
-    max-width: 300px;
-    font-size: 30px;
-    margin-top: 60px;
-    border: 2px solid transparent;
-    border-radius: 12px;
-    box-shadow: 0 2px 20px 5px #ccc;
-    text-align: center;
-}
-
 .div {
-    background-image: url(../task-timer/img/01073865290819.5d61d475f0072.jpg);
+    background-image: url(img/01073865290819.5d61d475f0072.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
     width: 800px;
     height: 300px;
     margin: 0 auto;
@@ -22,28 +13,29 @@
 }
 
 #dateDay {
-    color: #9b30ff;
+    color: black;
     margin: 0 auto;
     font-size: 50px;
-    max-width: 460px;
+    width: 100%;
     font-family: monospace;
     text-wrap: nowrap;
     overflow: hidden;
-    animation: typing 3s steps(20) infinite alternate-reverse;
+    text-align: center;
 }
 
 .backNight {
-    background-image: url(../task-timer/img/5_71.png);
+    background-image: url(img/5_71.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 800px;
-    height: 300px;
     margin: 0 auto;
     border-radius: 12px;
     position: relative;
     margin-top: 20px;
+
 }
+
 
 .timer {
     color: black;

@@ -105,14 +105,20 @@ tabPages();
 
 const backNight = document.querySelector('#backNight');
 const divBack = document.querySelector('.div');
+const divBack1 = document.querySelector('.container')
 const textWhite = document.querySelector('#timer span');
 const focusWhite = document.querySelector('#timerDesc span');
 const btnTimerWhite = document.querySelector('[data-tab="timer"]')
 const btnDecrescenteWhite = document.querySelector('[data-tab="timerDecrescente"]')
 const btnTimerLong = document.querySelector('[data-tab="timerDecrescenteLong"]')
 const timerLongWhite = document.querySelector('#timerLong span')
+const clockP = document.querySelector('.clock')
+const tituloLista = document.querySelector('#ltTitle')
+const dateDay = document.querySelector('#dateDay')
+
 backNight.addEventListener('click', () => {
     divBack.classList.toggle('backNight')
+    divBack1.classList.toggle('backNight')
     backNight.classList.toggle('backWhite')
 
     if (backNight.classList.contains('backWhite')) {
@@ -123,6 +129,9 @@ backNight.addEventListener('click', () => {
         btnDecrescenteWhite.style.color = "white"
         btnTimerLong.style.color = "white"
         timerLongWhite.style.color = "white"
+        clockP.style.color = 'white'
+        tituloLista.style.color = 'white'
+        dateDay.style.color = 'white'
 
     } else {
         backNight.innerHTML = 'Night Color'
@@ -132,7 +141,12 @@ backNight.addEventListener('click', () => {
         btnDecrescenteWhite.style.color = "black"
         btnTimerLong.style.color = "black"
         timerLongWhite.style.color = "black"
+        clockP.style.color = 'black'
+        tituloLista.style.color = 'black'
+        dateDay.style.color = 'black'
     }
+
+    botoesSpan();
 })
 
 function getDay() {
