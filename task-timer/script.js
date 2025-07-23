@@ -1,9 +1,21 @@
-function listadeTarefas(tarefaTexto = null) {
+function listadeTarefas(tarefaTexto) {
     const tarefas = document.querySelector('#tarefas');
     const listadeTarefas = document.querySelector('#listadeTarefas');
-    const texto = tarefaTexto || tarefas.value.trim();
 
-    if (texto === "") return;
+    let texto = '';
+    let prioridadeSalva = '';
+
+    if (typeof tarefaTexto === 'object' && tarefaTexto !== null) {
+        texto = tarefaTexto.descricao?.trim() || '';
+        prioridadeSalva = tarefaTexto.prioridade || '';
+    } else if (typeof tarefaTexto === 'string') {
+        texto = tarefaTexto.trim();
+    } else {
+        const input = document.querySelector('#tarefas');
+        texto = input.value.trim();
+    }
+
+    if (!texto) return;
 
 
     const li = document.createElement('li');
@@ -39,22 +51,78 @@ function listadeTarefas(tarefaTexto = null) {
         btn.classList.add('btnFeito');
         btn.addEventListener('click', () => {
             novoSpan.classList.toggle('feito');
+            novoSpan.style.color = '#ccc';
         })
         return btn;
     }
 
+    function criaSelectP() {
+        const select = document.createElement('select');
+        select.innerHTML = 'Prioridade';
+        select.classList.add('btnPrioridade');
+
+        const defaultOption = document.createElement('option');
+        defaultOption.textContent = 'Prioridade';
+        defaultOption.value = '';
+        defaultOption.disabled = true;
+        if (!prioridadeSalva) defaultOption.selected = true;
+        select.appendChild(defaultOption);
+
+        const opcoes = [
+            { texto: 'Alta', valor: 'Alta' },
+            { texto: 'Média', valor: 'Media' },
+            { texto: 'Baixa', valor: 'Baixa' }
+        ];
+
+        opcoes.forEach(e => {
+            const option = document.createElement('option');
+            option.value = e.valor;
+            option.textContent = e.texto;
+            if (e.valor === prioridadeSalva) option.selected = true;
+            select.appendChild(option);
+        });
+
+        select.addEventListener('change', (e) => {
+            const li = e.target.closest('li');
+            li.classList.remove('prioridade-alta', 'prioridade-media', 'prioridade-baixa');
+
+            switch (e.target.value) {
+                case 'Alta':
+                    li.classList.add('prioridade-alta');
+                    break
+                case 'Media':
+                    li.classList.add('prioridade-media');
+                    break
+                case 'Baixa':
+                    li.classList.add('prioridade-baixa');
+            }
+
+            salvarTarefas();
+
+        });
+        return select;
+    }
+
+
+
     const novoBtn = criaButton(texto);
     const novoSpan = criaSpan(texto)
+    const select = criaSelectP(prioridadeSalva);
     const btnFeito = criaButtonFeito(texto)
 
     listadeTarefas.appendChild(li);
     li.appendChild(novoSpan);
     li.appendChild(novoBtn);
     li.appendChild(btnFeito)
+    li.appendChild(select);
 
 
     tarefas.value = "";
     tarefas.focus();
+
+    if (prioridadeSalva) {
+        li.classList.add(`prioridade-${prioridadeSalva.toLowerCase()}`);
+    }
 
     salvarTarefas();
 
@@ -65,7 +133,7 @@ function botoesSpan() {
     const backNight = document.querySelector('#backNight');
 
     spans.forEach(span => {
-        span.style.color = backNight.classList.contains('backWhite') ? 'white' : 'black'
+        span.style.color = backNight.classList.contains('backWhite') ? 'white' : 'black';
     });
 }
 
@@ -113,28 +181,46 @@ tarefas.addEventListener('keypress', (e) => {
 
 const addTarefa = document.querySelector('#addTarefa');
 addTarefa.addEventListener('click', () => {
-    if (listadeTarefas() === null) return;
+    listadeTarefas();
+    clearVisibility();
 });
+
+
 
 function salvarTarefas() {
     const listadeTarefas = document.querySelector('#listadeTarefas')
     const liTarefas = listadeTarefas.querySelectorAll('li')
     const arrayTarefas = [];
-
+    
     for (let tarefa of liTarefas) {
-        let tarefaTexto = tarefa.innerText;
-        tarefaTexto = tarefaTexto.replace('APAGAR', '').trim();
-        tarefaTexto = tarefaTexto.replace('FEITO', '').trim();
-        arrayTarefas.push(tarefaTexto);
+        const tarefaTexto = tarefa.querySelector('.spanTarefa')?.innerHTML || '';
+        const prioridadeSelect = tarefa.querySelector('.btnPrioridade');
+        const prioridade = prioridadeSelect?.value || '';
+        
+        arrayTarefas.push({
+            descricao: tarefaTexto,
+            prioridade: prioridade,
+        });
     }
-
+    
     const tarefasJSON = JSON.stringify(arrayTarefas);
     localStorage.setItem('tarefas', tarefasJSON)
 }
 
+// function backTema() {
+//     const backNight = document.querySelector('#backNight');
+//     const temaAtual = backNight.classList.contains('backWhite') ? 'backWhite' : 'default';
+//     localStorage.setItem('tema', temaAtual);
+// }
+
 function recarregarTarefas() {
     const tarefas = localStorage.getItem('tarefas');
     const listaDeTarefas = JSON.parse(tarefas)
+
+    // const temaSalvo = localStorage.getItem('tema');
+    // const backNight = document.querySelector('#backNight');
+
+    if (!listaDeTarefas) return;
 
     for (let tarefa of listaDeTarefas) {
         listadeTarefas(tarefa);

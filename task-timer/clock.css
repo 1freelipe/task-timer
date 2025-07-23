@@ -194,7 +194,6 @@
     background: #fff;
     color: black;
     cursor: pointer;
-
 }
 
 
@@ -284,6 +283,7 @@
 
 .soundsList {
     border: none;
+    border-radius: 5px;
     padding: 5px;
     background: black;
     color: white;

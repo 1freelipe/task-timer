@@ -8,7 +8,6 @@ const data = new Date();
 const sound = new Audio('assets/relaxsound.wav')
 const sound2 = new Audio('assets/nextrelaxsound.wav')
 
-
 function timer() {
     const timer = document.querySelector('#timer span')
 
@@ -115,12 +114,13 @@ const timerLongWhite = document.querySelector('#timerLong span')
 const clockP = document.querySelector('.clock')
 const tituloLista = document.querySelector('#ltTitle')
 const dateDay = document.querySelector('#dateDay')
+const inputColor = document.querySelector('[data-tab="tarefa"]')
 
 backNight.addEventListener('click', () => {
     divBack.classList.toggle('backNight')
     divBack1.classList.toggle('backNight')
     backNight.classList.toggle('backWhite')
-
+    
     if (backNight.classList.contains('backWhite')) {
         backNight.innerHTML = 'White Color'
         textWhite.style.color = "white"
@@ -132,7 +132,8 @@ backNight.addEventListener('click', () => {
         clockP.style.color = 'white'
         tituloLista.style.color = 'white'
         dateDay.style.color = 'white'
-
+        inputColor.style.color = 'white'
+        
     } else {
         backNight.innerHTML = 'Night Color'
         textWhite.style.color = "black"
@@ -144,8 +145,10 @@ backNight.addEventListener('click', () => {
         clockP.style.color = 'black'
         tituloLista.style.color = 'black'
         dateDay.style.color = 'black'
-    }
+        inputColor.style.color = 'black'
 
+    }
+    
     botoesSpan();
 })
 
@@ -153,7 +156,7 @@ function getDay() {
     const dateDay = document.querySelector('#dateDay')
     const dataDay = new Date;
 
-    const days = ['Domingo', 'Segunda-Feira', 'Terca-Feira', 'Quarta-Feira', 'Quinta-Feira', 'Sexta-Feira', 'Sábado']
+    const days = ['Domingo', 'Segunda-Feira', 'Terça-Feira', 'Quarta-Feira', 'Quinta-Feira', 'Sexta-Feira', 'Sábado']
 
     let day = days[dataDay.getDay()];
 
