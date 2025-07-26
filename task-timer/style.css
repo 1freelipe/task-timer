@@ -283,10 +283,6 @@ label {
     box-shadow: 0 4px 15px rgba(178, 102, 255, 0.5);
 }
 
-.btnPrioridade:active {
-    transform: scale(0.90);
-}
-
 .prioridade-alta::after {
     content: "Alta";
     font-size: 15px;
