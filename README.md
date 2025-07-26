@@ -29,6 +29,7 @@ Tudo isso feito com **JavaScript puro**, sem frameworks, e com aprendizado cont�
 - ✅ Timer Pomodoro com ciclos e pausas
 - ✅ Sons de alerta ao fim de ciclos
 - ✅ Modo claro e escuro
+- ✅ Notificações do navegador
 
 ## 📌 Próximas funcionalidades
 
@@ -36,7 +37,6 @@ Tudo isso feito com **JavaScript puro**, sem frameworks, e com aprendizado cont�
 - [ ] Estatísticas de tempo focado
 - [ ] Modo “respiração guiada” (anti-ansiedade)
 - [ ] Sons ambientes (chuva, floresta, etc.)
-- [ ] Notificações do navegador
 
 ## 💻 Tecnologias usadas
 
