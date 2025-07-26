@@ -12,6 +12,50 @@
     margin-top: 20px;
 }
 
+.notif-card {
+    background-image: url(img/01073865290819.5d61d475f0072.jpg);
+    background-repeat: no-repeat;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    border-radius: 12px;
+    top: 0;
+    left: -205px;
+}
+
+.btNotif {
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
+    border: none;
+    padding: 9px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgba(148, 187, 233, 1);
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btNotif:hover {
+    transform: scale(1.05);
+}
+
+.btNotif:active {
+    transform: scale(0.90);
+}
+
+.notif-card h4 {
+    margin: 5px;
+    font-size: 15px;
+    border: 2px transparent ;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    margin: 50px 10px;
+    text-align: center;
+}
+
 #dateDay {
     color: black;
     margin: 0 auto;
@@ -100,7 +144,6 @@
     color: #fff;
     border: none;
     padding: 7px;
-    width: 60px;
     border-radius: 5px;
     background: linear-gradient(90deg, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
     cursor: pointer;

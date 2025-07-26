@@ -47,11 +47,11 @@ function listadeTarefas(tarefaTexto) {
 
     function criaButtonFeito() {
         const btn = document.createElement('button')
-        btn.innerHTML = 'Feito';
+        btn.innerHTML = 'Concluído';
         btn.classList.add('btnFeito');
         btn.addEventListener('click', () => {
             novoSpan.classList.toggle('feito');
-            novoSpan.style.color = '#ccc';
+            novoSpan.classList.contains('feito') ? novoSpan.style.color = 'grey' : novoSpan.style.color = 'inherit';       
         })
         return btn;
     }

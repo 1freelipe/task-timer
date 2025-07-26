@@ -1,9 +1,12 @@
 let seconds = 0;
-let seconds1 = 25 * 60;
-let seconds2 = 5 * 60;
-let seconds3 = 15 * 60;
-let seconds4 = 40 * 60;
+let seconds1 = 5;
+let seconds2 = 5;
+let seconds3 = 5;
+let seconds4 = 5;
 let interval = null;
+let isPaused = false;
+let interval2 = null;
+let currentState = null;
 const data = new Date();
 const sound = new Audio('assets/relaxsound.wav')
 const sound2 = new Audio('assets/nextrelaxsound.wav')
@@ -120,7 +123,7 @@ backNight.addEventListener('click', () => {
     divBack.classList.toggle('backNight')
     divBack1.classList.toggle('backNight')
     backNight.classList.toggle('backWhite')
-    
+
     if (backNight.classList.contains('backWhite')) {
         backNight.innerHTML = 'White Color'
         textWhite.style.color = "white"
@@ -133,7 +136,7 @@ backNight.addEventListener('click', () => {
         tituloLista.style.color = 'white'
         dateDay.style.color = 'white'
         inputColor.style.color = 'white'
-        
+
     } else {
         backNight.innerHTML = 'Night Color'
         textWhite.style.color = "black"
@@ -148,7 +151,7 @@ backNight.addEventListener('click', () => {
         inputColor.style.color = 'black'
 
     }
-    
+
     botoesSpan();
 })
 
@@ -166,9 +169,11 @@ function getDay() {
 getDay();
 
 function timerDecrescente() {
-    const timerDesc = document.querySelector('#timerDesc span')
-    const alarm = new Audio('assets/game-over-38511.mp3')
-    const alarm2 = new Audio('assets/game-bonus-2-294436.mp3')
+    const timerDesc = document.querySelector('#timerDesc span');
+    const alarm = new Audio('assets/game-over-38511.mp3');
+    const alarm2 = new Audio('assets/game-bonus-2-294436.mp3');
+    const btBegin2 = document.querySelector('#btBegin2');
+    const btReset = document.querySelector('#btReset');
 
     if (interval !== null) return;
 
@@ -176,30 +181,41 @@ function timerDecrescente() {
         seconds1--;
         updateDisplay(seconds1);
 
-        if (seconds2 <= 0) {
+        if (seconds1 <= 0) {
+            notif('Tempo concluído!!', 'Hora de fazer uma pausa!');
             clearInterval(interval)
             interval = null;
             alarm.play();
+            currentState = 'break';
+            console.log('CurrentState', currentState)
 
-            let interval2 = setInterval(() => {
+            interval2 = setInterval(() => {
                 seconds2--;
                 updateDisplay(seconds2);
                 timerDesc.style.color = "green";
 
+
                 if (seconds2 <= 0) {
+                    notif('Volte ao foco!!', 'Hora de continuar suas tarefas');
                     clearInterval(interval2);
                     interval2 = null;
                     alarm2.play();
                     timerDesc.innerHTML = '25:00';
                     seconds1 = 25 * 60;
+                    btBegin2.style.display = 'inline-block';
+                    btReset.style.display = 'inline-block'
+
                     if (backNight.classList.contains('backWhite')) {
                         timerDesc.style.color = "white";
                     } else {
                         timerDesc.style.color = "black";
                     }
-                }
+                };
+
             }, 1000)
 
+            btBegin2.style.display = 'none';
+            btReset.style.display = 'none';
         }
 
     }, 1000)
@@ -208,62 +224,159 @@ function timerDecrescente() {
         const dataTime = new Date(seconds * 1000);
         dataTime.setHours(0);
         timerDesc.innerHTML = `${dataTime.getMinutes().toString().padStart(2, '0')}:${dataTime.getSeconds().toString().padStart(2, '0')}`
-    }
+    };
 
 }
+
+function pauseBreak() {
+    const btnBreak2 = document.querySelector('#btBreak2');
+    const btBegin2 = document.querySelector('#btBegin2');
+    const btReset = document.querySelector('#btReset');
+    const timerDesc = document.querySelector('#timerDesc span');
+    const backNight = document.querySelector('#backNight');
+
+    btnBreak2.addEventListener('click', () => {
+
+        if (seconds2 <= 0) {
+            btBegin2.style.display = 'inline-block';
+            return
+        };
+
+        if (currentState === 'break') {
+            if (!isPaused) {
+                clearInterval(interval2)
+                document.querySelector('#timerDesc span').style.color = "red";
+                sound.pause();
+                btnBreak2.textContent = 'Retomar';
+                isPaused = true;
+            } else {
+                interval2 = setInterval(() => {
+                    if (seconds2 > 0) {
+                        seconds2--;
+                        updateDisplay(seconds2);
+                        if (seconds2 <= 0) {
+                            btBegin2.style.display = 'inline-block';
+                            btReset.style.display = 'inline-block';
+                            timerDesc.textContent = '25:00';
+                            backNight.classList.contains('backWhite') ? timerDesc.style.color = 'white' : timerDesc.style.color = 'black';
+                            seconds1 = 25 * 60;
+                        }
+                    } else {
+                        clearInterval(interval2);
+                        interval2 = null;
+                    }
+                }, 1000)
+
+                btnBreak2.textContent = 'Pausar'
+                timerDesc.style.color = 'green';
+                isPaused = false;
+                sound.play();
+            };
+        }
+    });
+
+    function updateDisplay(seconds) {
+        const dataTime = new Date(seconds * 1000);
+        dataTime.setHours(0);
+        timerDesc.innerHTML = `${dataTime.getMinutes().toString().padStart(2, '0')}:${dataTime.getSeconds().toString().padStart(2, '0')}`
+    };
+};
+
+pauseBreak();
 
 function longBreak() {
     const timerLong = document.querySelector('#timerLong span')
     const alarm = new Audio('assets/game-over-38511.mp3')
     const alarm2 = new Audio('assets/game-bonus-2-294436.mp3')
+    const btBegin3 = document.querySelector('#btBegin3');
+    const btReset1 = document.querySelector('#btReset1');
+    const backNight = document.querySelector('#backNight');
 
     if (interval !== null) return;
 
     interval = setInterval(() => {
-        seconds4--;
-        updateDisplay(seconds4)
+        seconds3--;
+        updateDisplay(seconds3)
 
         // Ínicio do Long Timer
-        if (seconds4 <= 0) {
+        if (seconds3 <= 0) {
+            currentState = 'break';
             clearInterval(interval);
             interval = null;
             alarm.play();
+            notif('Tempo concluído!!', 'Hora de fazer uma pausa!')
+            timerLong.style.color = "green";
+            interval2 = setInterval(longBreakTick, 1000);
 
-            // Ínicio do Long Break
-            let interval2 = setInterval(() => {
-                seconds3--;
-                updateDisplay(seconds3)
-                timerLong.style.color = "green";
-
-                // Retorno para o long Timer
-                if (seconds3 <= 0) {
-                    clearInterval(interval2);
-                    interval2 = null;
-                    timerLong.innerHTML = '40:00';
-                    seconds4 = 40 * 60;
-                    alarm2.play();
-                    if (backNight.classList.contains('backWhite')) {
-                        timerLong.style.color = "white";
-                    } else {
-                        timerLong.style.color = "black";
-                    }
-                }
-            }, 1000)
+            btBegin3.style.display = 'none';
+            btReset1.style.display = 'none';
         }
+
+
     }, 1000)
+
+    function longBreakTick() {
+        if (seconds4 > 0) {
+            seconds4--;
+            updateDisplay(seconds4);
+        } else {
+            clearInterval(interval2);
+            interval2 = null;
+            notif('Volte ao foco!', 'Hora de continuar suas tarefas!');
+            timerLong.innerHTML = '40:00';
+            seconds3 = 40 * 60;
+            alarm2.play();
+            btBegin3.style.display = 'inline-block';
+            btReset1.style.display = 'inline-block';
+
+            if (backNight.classList.contains('backWhite')) {
+                timerLong.style.color = 'white';
+            } else {
+                timerLong.style.color = 'black';
+            }
+        }
+    }
+
+    const btnBreak3 = document.querySelector('#btBreak3')
+    btnBreak3.addEventListener('click', () => {
+
+        if (currentState === 'break') {
+            if (!isPaused) {
+                isPaused = true;
+                clearInterval(interval2);
+                timerLong.style.color = 'red';
+                btnBreak3.textContent = 'Retomar';
+                sound.pause();
+                if (seconds4 <= 0) {
+                    btBegin3.style.display = 'inline-block';
+                    btReset1.style.display = 'inline-block';
+                    timerDesc.textContent = '25:00';
+                    backNight.classList.contains('backWhite') ? timerDesc.style.color = 'white' : timerDesc.style.color = 'black';
+                    seconds3 = 40 * 60;
+                }
+            } else {
+                isPaused = false;
+                interval2 = setInterval(longBreakTick, 1000);
+                btnBreak3.textContent = 'Pausar';
+                timerLong.style.color = 'green';
+                sound.play();
+            }
+        };
+    });
 
     function updateDisplay(seconds) {
         const dataTime = new Date(seconds * 1000);
         dataTime.setHours(0);
         timerLong.innerHTML = `${dataTime.getMinutes().toString().padStart(2, '0')}:${dataTime.getSeconds().toString().padStart(2, '0')}`
     }
-}
+};
 
 // Focus Timer
 const btnBegin2 = document.querySelector('#btBegin2');
 btnBegin2.addEventListener('click', () => {
     timerDecrescente();
     sound.play();
+    currentState = 'focus';
 
     if (backNight.classList.contains('backWhite')) {
         document.querySelector('#timerDesc span').style.color = "white"
@@ -278,7 +391,7 @@ btnBreak2.addEventListener('click', () => {
     interval = null;
     document.querySelector('#timerDesc span').style.color = "red";
     sound.pause();
-})
+});
 
 const btnReset = document.querySelector('#btReset');
 btnReset.addEventListener('click', () => {
@@ -301,6 +414,7 @@ const btnBegin3 = document.querySelector('#btBegin3')
 btnBegin3.addEventListener('click', () => {
     longBreak();
     sound2.play();
+    currentState = 'focus'
     if (backNight.classList.contains('backWhite')) {
         document.querySelector('#timerLong span').style.color = "white"
     } else {
@@ -340,6 +454,36 @@ btMuted.addEventListener('click', () => {
         sound.volume = 0;
         sound2.volume = 0;
     }
+})
+
+function ativarNotif() {
+    if (Notification.permission === 'default' || Notification.permission === 'denied') {
+        Notification.requestPermission().then(permission => {
+            if (permission === 'granted') {
+                console.log("Permissão concedida");
+                notif('Notificações', 'Permissão concedida')
+            } else {
+                console.log("Permissão negada");
+                notif('Notificações', 'Permissão negada')
+            }
+        });
+    } else if (Notification.permission === 'granted');
+    notif('Notificações', 'Permissão já concedida')
+
+};
+
+function notif(titulo, mensagem) {
+    if (Notification.permission === 'granted') {
+        new Notification(titulo, {
+            body: mensagem
+        })
+    }
+}
+
+const btNotif = document.querySelector('.ativarnotificacao');
+btNotif.addEventListener('click', () => {
+    ativarNotif();
+
 })
 
 
