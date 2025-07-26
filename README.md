@@ -30,10 +30,10 @@ Tudo isso feito com **JavaScript puro**, sem frameworks, e com aprendizado cont�
 - ✅ Sons de alerta ao fim de ciclos
 - ✅ Modo claro e escuro
 - ✅ Notificações do navegador
+- ✅ Etiquetas e prioridade de tarefas
 
 ## 📌 Próximas funcionalidades
 
-- [ ] Etiquetas e prioridade de tarefas
 - [ ] Estatísticas de tempo focado
 - [ ] Modo “respiração guiada” (anti-ansiedade)
 - [ ] Sons ambientes (chuva, floresta, etc.)
