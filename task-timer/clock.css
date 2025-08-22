@@ -39,6 +39,11 @@
     cursor: pointer;
 }
 
+.notif-title {
+    color: inherit;
+    font-style: italic;
+}
+
 .btNotif:hover {
     transform: scale(1.05);
 }
@@ -50,7 +55,7 @@
 .notif-card h4 {
     margin: 5px;
     font-size: 15px;
-    border: 2px transparent ;
+    border: 2px transparent;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
     margin: 50px 10px;
     text-align: center;
@@ -78,6 +83,19 @@
     position: relative;
     margin-top: 20px;
 
+}
+
+.backNight-notif {
+    background-image: url(img/5_71.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    border-radius: 12px;
+    top: 0;
+    left: -205px;
 }
 
 

@@ -118,11 +118,16 @@ const clockP = document.querySelector('.clock')
 const tituloLista = document.querySelector('#ltTitle')
 const dateDay = document.querySelector('#dateDay')
 const inputColor = document.querySelector('[data-tab="tarefa"]')
+const divNotif = document.querySelector('.notif-card')
+const notiftitle = document.querySelector('.notif-title')
 
 backNight.addEventListener('click', () => {
     divBack.classList.toggle('backNight')
     divBack1.classList.toggle('backNight')
     backNight.classList.toggle('backWhite')
+    divNotif.classList.toggle('backNight-notif')
+
+    divNotif.classList.contains('backNight-notif') ? notiftitle.style.color = 'white' : notiftitle.style.color = 'inherit';
 
     if (backNight.classList.contains('backWhite')) {
         backNight.innerHTML = 'White Color'
