@@ -34,7 +34,6 @@ Tudo isso feito com **JavaScript puro**, sem frameworks, e com aprendizado cont�
 
 ## 📌 Próximas funcionalidades
 
-- [ ] Estatísticas de tempo focado
 - [ ] Modo “respiração guiada” (anti-ansiedade)
 - [ ] Sons ambientes (chuva, floresta, etc.)
 
