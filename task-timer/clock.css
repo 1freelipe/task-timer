@@ -1,3 +1,9 @@
+.russo-one-regular {
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .div {
     background-image: url(img/01073865290819.5d61d475f0072.jpg);
     background-position: center;
@@ -62,11 +68,11 @@
 }
 
 #dateDay {
-    color: black;
+    font-family: "Russo One", sans-serif;
+    color: rgb(0, 0, 0);
     margin: 0 auto;
-    font-size: 50px;
+    font-size: 45px;
     width: 100%;
-    font-family: monospace;
     text-wrap: nowrap;
     overflow: hidden;
     text-align: center;
@@ -132,8 +138,12 @@
     padding: 7px;
     width: 60px;
     border-radius: 5px;
-    background: linear-gradient(90deg, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    background: linear-gradient(90deg, rgb(208, 183, 241) 50%, rgb(142, 188, 214) 80%);
     cursor: pointer;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
 }
 
 #btBegin2 {
@@ -141,7 +151,7 @@
 }
 
 #btBegin3 {
-    background: linear-gradient(90deg, rgba(71, 139, 166, 1) 0%, rgba(70, 212, 197, 1) 100%);
+    background: linear-gradient(90deg, rgb(128, 206, 236) 20%, rgb(20, 187, 170) 90%);
 }
 
 #btBegin:hover,
@@ -163,8 +173,12 @@
     border: none;
     padding: 7px;
     border-radius: 5px;
-    background: linear-gradient(90deg, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    background: linear-gradient(90deg, rgb(208, 183, 241) 50%, rgb(142, 188, 214) 80%);
     cursor: pointer;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
 }
 
 #btBreak2 {
@@ -172,7 +186,7 @@
 }
 
 #btBreak3 {
-    background: linear-gradient(90deg, rgba(71, 139, 166, 1) 0%, rgba(70, 212, 197, 1) 100%);
+    background: linear-gradient(90deg, rgb(128, 206, 236) 20%, rgb(20, 187, 170) 90%);
 }
 
 #btBreak:hover,
@@ -193,8 +207,12 @@
     padding: 7px;
     width: 60px;
     border-radius: 5px;
-    background: linear-gradient(90deg, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    background: linear-gradient(90deg, rgb(208, 183, 241) 50%, rgb(142, 188, 214) 80%);
     cursor: pointer;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
 }
 
 #btZero:hover {
@@ -214,10 +232,14 @@
     border-radius: 5px;
     background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
     cursor: pointer;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
 }
 
 #btReset1 {
-    background: linear-gradient(90deg, rgba(71, 139, 166, 1) 0%, rgba(70, 212, 197, 1) 100%);
+    background: linear-gradient(90deg, rgb(128, 206, 236) 20%, rgb(20, 187, 170) 90%);
 }
 
 #btReset:hover,
@@ -239,9 +261,10 @@
     margin: 0 0 10px 10px;
     border: none;
     border-radius: 5px;
-    background: black;
-    color: #fff;
+    background: rgba(70, 184, 89, 0.856);
+    color: #080808;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .backWhite {
@@ -252,8 +275,8 @@
     margin: 0 0 10px 10px;
     border: none;
     border-radius: 5px;
-    background: #fff;
-    color: black;
+    background: rgba(13, 4, 145, 0.87);
+    color: rgb(255, 255, 255);
     cursor: pointer;
 }
 
@@ -274,13 +297,13 @@
 }
 
 .tab:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(20, 142, 163, 0.226);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
 .tabAtiva {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(122, 227, 235, 0.3);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -298,11 +321,13 @@
     right: 0;
     bottom: 0;
     padding: 10px;
-    margin: 0 5px 0 0;
+    margin: 0 20px 0 0;
     background: center;
     border: none;
     font-size: 25px;
     cursor: pointer;
+    height: 50px;
+    width: 50px;
 }
 
 .sound:hover {
@@ -311,7 +336,7 @@
 
 .sound:active {
     background: none;
-    transform: scale(0.90);
+    transform: scale(1);
 }
 
 .mute {
@@ -319,11 +344,12 @@
     right: 0;
     bottom: 0;
     padding: 10px;
-    margin: 0 50px 0 0;
     background: center;
     border: none;
     font-size: 25px;
     cursor: pointer;
+    height: 50px;
+    width: 50px;
 }
 
 .mute:hover {
@@ -332,22 +358,46 @@
 
 .mute:active {
     background: none;
-    transform: scale(0.90);
+    transform: scale(1);
 }
 
 .sounds {
     width: auto;
     height: 50px;
     position: absolute;
-    right: -75px;
+    right: -90px;
 }
 
 .soundsList {
     border: none;
     border-radius: 5px;
     padding: 5px;
-    background: black;
-    color: white;
+    background: rgba(148, 188, 233, 0.938);
+    color: rgb(231, 230, 230);
     box-shadow: 0 0 30px rgba(227, 228, 237, 0.37);
     border: 2px solid rgba(255, 255, 255, 0.18);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.montserrat-light-300 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+.montserrat-semibold-600 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }

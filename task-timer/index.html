@@ -5,8 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task-Timer</title>
+    <link rel="icon" href="./img/icone.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bebas+Neue&family=Montserrat:wght@300&family=Russo+One&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
@@ -14,10 +22,10 @@
     <div class="div">
         <div class="notif-card">
             <h4 class="notif-title">Quer receber lembretes úteis para manter seu foco e bem-estar?</h4>
-            <button class="btNotif ativarnotificacao">ATIVAR</button>
+            <button class="btNotif ativarnotificacao poppins-semibold-italic">ATIVAR</button>
         </div>
         <div class="sounds">
-            <select name="sounds" id="sounds" class="soundsList">
+            <select name="sounds" id="sounds" class="soundsList poppins-semibold-italic">
                 <option value="rain">Rain</option>
                 <option value="forest">Forest</option>
             </select>
@@ -35,7 +43,7 @@
                 <div class="div-botoes">
                     <button id="btBegin">Iniciar</button>
                     <button id="btBreak">Pausar</button>
-                    <button id="btZero">Zerar</button>
+                    <button id="btZero">Reset</button>
                 </div>
             </div>
 
@@ -57,21 +65,25 @@
                 </div>
             </div>
         </div>
-        <button id="backNight" class="nightcolor">Night Color</button>
-        <button class="sound" id="btSound">🔊</button>
-        <button class="mute" id="btMuted">🔇</button>
+        <button id="backNight" class="nightcolor poppins-semibold-italic">Night Color</button>
+        <button class="sound" id="btSound">
+            <img class="sound" src="./img/volume.png" alt="">
+        </button>
+        <button class="mute" id="btMuted">
+            <img class="mute" src="./img/mute.png" alt="">
+        </button>
     </div>
 
     <div class="container">
-        <h1 id="ltTitle">Lista de tarefas</h1>
+        <h1 id="ltTitle">Lista de Tarefas</h1>
         <div class="lista">
             <input type="text" id="tarefas" placeholder="Adicione uma tarefa" data-tab="tarefa">
-            <button id="addTarefa" class="addTarefa">Adicionar tarefa</button>
+            <button id="addTarefa" class="addTarefa montserrat-light-300">Adicionar tarefa</button>
         </div>
         <ul id="listadeTarefas" class="listadeTarefas">
         </ul>
         <div class="div-button">
-            <button id="btClear">Apagar lista</button>
+            <button id="btClear" class="montserrat-light-300">Apagar Lista</button>
         </div>
         <div class="clock" id="clockTime">00:00:00</div>
     </div>
