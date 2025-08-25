@@ -43,5 +43,6 @@ Tudo isso feito com **JavaScript puro**, sem frameworks, e com aprendizado cont�
 - JavaScript ES6+
 
 🤝 Contribuições
+Designer: [Beatriz Martins](https://github.com/beamrt)
 Ideias, melhorias e sugestões são super bem-vindas!
 Se quiser contribuir, abra uma issue ou um pull request na branch dev.
