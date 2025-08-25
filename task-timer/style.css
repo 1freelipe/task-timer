@@ -59,7 +59,7 @@ body {
     width: 800px;
     padding: 10px;
     border-radius: 12px;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 2px 2px rgba(224, 73, 73, 0.2);
     background-image: url(img/01073865290819.5d61d475f0072.jpg);
     background-position: center;
     background-size: cover;
@@ -166,7 +166,7 @@ input:hover {
 
 input::placeholder {
     font-size: 20px;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .addTarefa {
@@ -290,7 +290,7 @@ label {
     height: 20px;
     line-height: 20px;
     background: red;
-    color: white;
+    color: rgb(10, 10, 10);
     position: absolute;
     text-align: center;
     transform: rotate(45deg);
@@ -307,8 +307,8 @@ label {
     width: 100px;
     height: 20px;
     line-height: 20px;
-    background: rgb(228, 151, 10);
-    color: white;
+    background: rgb(241, 191, 98);
+    color: rgb(10, 10, 10);
     position: absolute;
     text-align: center;
     transform: rotate(45deg);
@@ -325,8 +325,8 @@ label {
     width: 100px;
     height: 20px;
     line-height: 20px;
-    background: rgb(81, 121, 21);
-    color: white;
+    background: rgb(163, 211, 92);
+    color: rgb(10, 10, 10);
     position: absolute;
     text-align: center;
     transform: rotate(45deg);
@@ -348,16 +348,16 @@ label {
 .div-button {
     width: 100%;
     margin: 0 auto;
-    max-width: 160px;
+    max-width: 180px;
 }
 
 .div-button button {
-    padding: 5px 15px;
-    font-size: 25px;
+    padding: 5px 20px;
+    font-size: 20px;
     color: #725ac1;
     font-weight: bold;
     border: none;
-    border: 2px solid #725ac1;
+    border: 2px solid #beafee;
     border-radius: 15px;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
@@ -366,7 +366,7 @@ label {
 
 .div-button button:hover {
     color: #fff;
-    box-shadow: inset 0 -100px 0 0 #9b30ff;
+    box-shadow: inset 0 -100px 0 0 #725ac1;
 }
 
 .div-button button:active {
