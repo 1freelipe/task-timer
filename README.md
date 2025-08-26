@@ -42,8 +42,8 @@ Tudo isso feito com **JavaScript puro**, sem frameworks, e com aprendizado cont�
 - CSS3
 - JavaScript ES6+
 
-Designer: [Beatriz Martins](https://github.com/beamrt)
-
 🤝 Contribuições
 Ideias, melhorias e sugestões são super bem-vindas!
 Se quiser contribuir, abra uma issue ou um pull request na branch dev.
+
+## Designer final: [Beatriz Martins](https://github.com/beamrt)
